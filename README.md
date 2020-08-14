@@ -33,7 +33,7 @@ Get path to package.json for identified dependency
 
 ▸ **dependencyPath**(`key`: string, `cwd`: string): *string*
 
-*Defined in [index.ts:9](https://github.com/rhdeck/dependency-package-path/blob/b247da8/src/index.ts#L9)*
+*Defined in [index.ts:9](https://github.com/rhdeck/dependency-package-path/blob/4ef507b/src/index.ts#L9)*
 
 Get the path to a node dependency, traversing up the tree as expected
 
