@@ -1,50 +1,49 @@
 
 <a name="readmemd"></a>
 
-Template for making easy-to-work-with tempates
+# dependency-package-path
 
-# ts-template
-
-## Usage
-
-1. [Copy this template](https://github.com/rhdeck/ts-template/)
-2. Clone to a local directory (eg `git clone https://github.com/me/my-repository/ && cd my-repository`)
-3. Run `./setup.js` to initialize the node package (Get rid of template strings - and this readme!)
-4. Happy Coding!
-
-## Useful Scripts
-
-1. `yarn build` will build using typescript pre-configured to node-compatible defaults
-2. `yarn docs` will auto-generate a README.md that starts with TOP.md, then adds CLI documentation (via [commanderdoc](https://npmjs.com/package/commanderdoc)) for any tool you have set up, and then library documentation after that.
-3. `yarn test` is pre-configured to test for typescript errors
-
-## Git code protections
-
-1. `git commit` will be blocked on the `main` branch unless you set the environment variable `ALLOWMAIN=1` Branch commits and PRs are thus encouraged
-2. `git commit` also tests messages for meeting the commitline standard conventions.
-3. `git commit` blocks pushes that do not pass `yarn test` (as a base case, they must pass typescript compilation)
-4. `npm publish` will always rebuild the code, the documentation, and push those changes back to the repository.
-5. `npm publish` will only publish the lib and src directories - any others are no
-
-## A note on "main"
-
-I made a deliberate choice to change the primary branch from `master` to `main` for reasons that are obvious to some. This repository endeavors to make that just automatic.
-
-PRs and feedback welcome via GitHub issues.
-
-
-<a name="_librarymd"></a>
-
-[template - v1.0.0](#readmemd)
-
-# template - v1.0.0
-
-
+Find where a dependency is stored - either in `node_modules` below the package, or "hoisted" above. Returns the directory hosting `package.json`.
 
 
 <a name="__climd"></a>
 
 # Usage
 ```bash
-template [options]
+npx dependency-package-path [options]
 ```
+Get path to package.json for identified dependency
+# Options
+* -w --working-path \<`path`> Working path for node package to examine (default: `.`)
+
+<a name="_librarymd"></a>
+
+
+# dependency-package-path - v1.0.0
+
+## Index
+
+### Functions
+
+* [dependencyPath](#dependencypath)
+
+## Functions
+
+###  dependencyPath
+
+▸ **dependencyPath**(`key`: string, `cwd`: string): *string*
+
+*Defined in [index.ts:9](https://github.com/rhdeck/dependency-package-path/blob/b247da8/src/index.ts#L9)*
+
+Get the path to a node dependency, traversing up the tree as expected
+
+**`internal`** 
+
+**Parameters:**
+
+Name | Type | Default | Description |
+------ | ------ | ------ | ------ |
+`key` | string | - | Identifier of the node package to find |
+`cwd` | string | process.cwd() | Context for working directory (changes with recursive calls)  |
+
+**Returns:** *string*

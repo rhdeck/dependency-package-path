@@ -1,8 +1,7 @@
 {
-  "name": "template",
-  "private": true,
+  "name": "dependency-package-path",
   "version": "1.0.0",
-  "description": "",
+  "description": "Get path to package.json for a dependency",
   "main": "lib/index.js",
   "bin": "lib/bin.js",
   "scripts": {
@@ -14,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rhdeck/base.git"
+    "url": "git+https://github.com/rhdeck/dependency-package-path.git"
   },
   "author": "Ray Deck",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rhdeck/base/issues"
+    "url": "https://github.com/rhdeck/dependency-package-path/issues"
   },
-  "homepage": "https://github.com/rhdeck/base#readme",
+  "homepage": "https://github.com/rhdeck/dependency-package-path#readme",
   "devDependencies": {
     "@commitlint/cli": "^9.1.1",
     "@commitlint/config-conventional": "^9.1.1",
